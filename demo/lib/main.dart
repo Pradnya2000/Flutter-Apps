@@ -1,4 +1,5 @@
 
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'app_screens/first_screen.dart';
@@ -11,40 +12,35 @@ void main()
       appBar: AppBar(
         title:Text("List Items")
       ),
-    body: getListView(),
+      body: getListView(),
+  
     )
-   
   )
 );
 }
 
+List<String> getListElements()
+{
+  var items=List<String>.generate(1000, (counter) => "Item $counter");
+  return items;
+} 
+
 Widget getListView()
 {
-  var listview=ListView(
-    children: <Widget>[
-
-      ListTile(
-        leading: Icon(Icons.access_alarm),
-        title: Text("Alarm"),
-        subtitle: Text("set an alarm"),
-        trailing: Icon(Icons.add_alert),
-        onTap: (){
-          debugPrint("set alarm");
-        },
-      ),
-       ListTile(
-        leading: Icon(Icons.audiotrack),
-        title: Text("Music"),
-        subtitle: Text("Listen songs"),
-        trailing: Icon(Icons.library_music),
-      ),
-       ListTile(
-        leading: Icon(Icons.camera_alt),
-        title: Text("Camera"),
-        subtitle: Text("Click Pictures"),
-        trailing: Icon(Icons.camera),
-      ),
-    ],
+  var listdata=getListElements();
+  var listView=ListView.builder(
+    itemBuilder: (context ,index)
+    {
+      return ListTile(
+            leading: Icon(Icons.arrow_forward_ios),
+            title:Text(listdata[index]),
+            onTap: ()
+            {
+              debugPrint("tapped on ${listdata[index]}");
+            },
+      );
+    }
   );
-  return listview;
+  return listView;
+
 }
