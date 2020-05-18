@@ -59,8 +59,60 @@ class Home extends StatelessWidget {
               style: TextStyle(decoration: TextDecoration.none, fontSize: 30.0),
             ))
           ],
-        )
+        ),
+        NatureImageAsset(),
+        ReactButton()
       ]),
     ));
   }
+}
+class NatureImageAsset extends StatelessWidget
+{
+  @override
+  Widget build(BuildContext context) {
+    AssetImage assetImage=AssetImage('images/Joe.jpg');
+    Image imagedemo=Image(image: assetImage,width: 250.0,height: 250.0,);
+    return Container(child:imagedemo);
+  }
+  
+}
+
+class ReactButton extends StatelessWidget
+{
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(20.0),
+     
+      child:RaisedButton(
+        color: Colors.deepOrange,
+        child: Text(
+          "click me",
+          style: TextStyle(
+            color: Colors.black
+          ),),
+        elevation: 6.0,
+        onPressed: (){
+          react(context);
+        })
+    );
+  }
+  
+}
+
+void react(BuildContext context)
+{
+  var alertDailog=AlertDialog(
+    title: Text("Reacted"),
+    content: Text("now do it"),
+
+  );
+  showDialog(
+    context: context,
+    builder: (BuildContext context)
+    {
+
+        return alertDailog;
+    }
+    );
 }
