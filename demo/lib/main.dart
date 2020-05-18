@@ -13,6 +13,13 @@ void main()
         title:Text("List Items")
       ),
       body: getListView(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          debugPrint("floatingButton Pressed");
+        },
+        child: Icon(Icons.add),
+        tooltip: "Add item",  
+      ),
   
     )
   )
@@ -25,6 +32,19 @@ List<String> getListElements()
   return items;
 } 
 
+void showSnackbar(BuildContext context,String msg)
+{
+  var snackbar=SnackBar(
+    content: Text("You tapped on $msg"),
+    action:SnackBarAction(
+      label: "UNDO",
+      onPressed:()
+      {
+        debugPrint("performing Dummy Undo");
+      })
+  );
+  Scaffold.of(context).showSnackBar(snackbar);
+}
 Widget getListView()
 {
   var listdata=getListElements();
@@ -36,7 +56,7 @@ Widget getListView()
             title:Text(listdata[index]),
             onTap: ()
             {
-              debugPrint("tapped on ${listdata[index]}");
+              showSnackbar(context,listdata[index]);
             },
       );
     }
