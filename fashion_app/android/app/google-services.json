@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "107961632076",
+    "firebase_url": "https://ecommerce-be6df.firebaseio.com",
+    "project_id": "ecommerce-be6df",
+    "storage_bucket": "ecommerce-be6df.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:107961632076:android:ddda3c55e00c39760dbbe9",
+        "android_client_info": {
+          "package_name": "com.example.fashion_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "107961632076-437s3hqb9cff52n86tuscbnmf8bhb4vt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fashion_app",
+            "certificate_hash": "01310aa5e05f30d03a68f891ff1b0a4ad4cb40dd"
+          }
+        },
+        {
+          "client_id": "107961632076-mp3ukdvkqfo9p2sih4e33jlsj6aqpfsb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAM-u3AXHwUUkcQkoyWWpBjZ0wsL1WKsZQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "107961632076-mp3ukdvkqfo9p2sih4e33jlsj6aqpfsb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
